@@ -28,8 +28,8 @@ with plt.xkcd():
   ax = fig.add_axes((0.1, 0.2, 0.8, 0.7))
   ax.spines.right.set_color('none')
   ax.spines.top.set_color('none')
-  ax.set_xticks([])
-  ax.set_yticks([])
+#   ax.set_xticks([])
+#   ax.set_yticks([])
   ax.set_ylim([-30, 10])
 
   data = np.ones(100)

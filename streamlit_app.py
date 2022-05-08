@@ -3,6 +3,21 @@ import pandas as pd
 import numpy as np
 import time
 
+def time_val(x, threshold):
+  m = 100 / threshold
+  if x >= threshold:
+    return 100
+  return m * x
+
+time_x = np.arange(1000)
+
+time_source = pd.DataFrame({
+  'time' : time_x,
+  'time_score' : time_val(time_x)
+})
+
+st.write(time_source)
+
 df = pd.DataFrame({
   'first column': [1, 2, 3, 4],
   'second column': [10, 20, 30, 40]

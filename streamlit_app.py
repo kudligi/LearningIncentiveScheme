@@ -32,7 +32,7 @@ with plt.xkcd():
 #   ax.set_yticks([])
 #   ax.set_ylim([-30, 10])
 
-  data = vec_time_val
+  data = vec_time_val(time_x)
 
 #   ax.annotate(
 #   'THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED',

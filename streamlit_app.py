@@ -3,17 +3,21 @@ import pandas as pd
 import numpy as np
 import time
 
-def time_val(x, threshold):
+threshold = 50
+
+def time_val(x):
   m = 100 / threshold
   if x >= threshold:
     return 100
   return m * x
 
+vec_time_val = np.vectorize(time_val)
+
 time_x = np.arange(1000)
 
 time_source = pd.DataFrame({
   'time' : time_x,
-  'time_score' : time_val(time_x, 50)
+  'time_score' : vec_time_val(time_x)
 })
 
 st.write(time_source)

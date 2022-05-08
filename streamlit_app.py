@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import time
+import matplotlib.pyplot as plt
 
 threshold = st.slider("Time involvement", 0, 100, 5)
 
@@ -13,7 +14,7 @@ def time_val(x):
 
 vec_time_val = np.vectorize(time_val)
 
-time_x = np.arange(1000)
+time_x = np.arange(100)
 
 time_source = pd.DataFrame({
   'time' : time_x,
@@ -22,6 +23,35 @@ time_source = pd.DataFrame({
 
 st.line_chart(time_source)
 
+with plt.xkcd():
+  fig = plt.figure()
+  ax = fig.add_axes((0.1, 0.2, 0.8, 0.7))
+  ax.spines.right.set_color('none')
+  ax.spines.top.set_color('none')
+  ax.set_xticks([])
+  ax.set_yticks([])
+  ax.set_ylim([-30, 10])
+
+  data = np.ones(100)
+  data[70:] -= np.arange(30)
+
+  ax.annotate(
+  'THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED',
+  xy=(70, 1), arrowprops=dict(arrowstyle='->'), xytext=(15, -10))
+
+  ax.plot(data)
+
+  ax.set_xlabel('time')
+  ax.set_ylabel('my overall health')
+  fig.text(
+  0.5, 0.05,
+  '"Stove Ownership" from xkcd by Randall Munroe',
+  ha='center')
+  
+  st.pyplot(fig)
+  
+
+"""
 df = pd.DataFrame({
   'first column': [1, 2, 3, 4],
   'second column': [10, 20, 30, 40]
@@ -95,3 +125,4 @@ for i in range(100):
   time.sleep(0.1)
 
 '...and now we\'re done!'
+"""

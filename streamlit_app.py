@@ -13,7 +13,7 @@ time_x = np.arange(1000)
 
 time_source = pd.DataFrame({
   'time' : time_x,
-  'time_score' : time_val(time_x)
+  'time_score' : time_val(time_x, 50)
 })
 
 st.write(time_source)

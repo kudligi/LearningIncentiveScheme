@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import time
 
-threshold = 50
+threshold = st.slider("Time involvement", 0, 100, 5)
 
 def time_val(x):
   m = 100 / threshold
@@ -20,7 +20,7 @@ time_source = pd.DataFrame({
   'time_score' : vec_time_val(time_x)
 })
 
-st.write(time_source)
+st.line_chart(time_source)
 
 df = pd.DataFrame({
   'first column': [1, 2, 3, 4],

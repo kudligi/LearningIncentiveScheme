@@ -30,19 +30,18 @@ with plt.xkcd():
   ax.spines.top.set_color('none')
 #   ax.set_xticks([])
 #   ax.set_yticks([])
-  ax.set_ylim([-30, 10])
+#   ax.set_ylim([-30, 10])
 
-  data = np.ones(100)
-  data[70:] -= np.arange(30)
+  data = vec_time_val
 
-  ax.annotate(
-  'THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED',
-  xy=(70, 1), arrowprops=dict(arrowstyle='->'), xytext=(15, -10))
+#   ax.annotate(
+#   'THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED',
+#   xy=(70, 1), arrowprops=dict(arrowstyle='->'), xytext=(15, -10))
 
   ax.plot(data)
 
   ax.set_xlabel('time')
-  ax.set_ylabel('my overall health')
+  ax.set_ylabel('time score')
   fig.text(
   0.5, 0.05,
   '"Stove Ownership" from xkcd by Randall Munroe',

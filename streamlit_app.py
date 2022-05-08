@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import time
 
 df = pd.DataFrame({
   'first column': [1, 2, 3, 4],
